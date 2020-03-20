@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#logo {
+    background-color: #4C1D4F;
+    color: white;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+li {
+    display: inline;
+}
+
+#more {
+    background-color: #4C1D4F;
+    color: white;
+}
+
+footer {
+    color:white;
+    background-color: #0A171F;
+}
