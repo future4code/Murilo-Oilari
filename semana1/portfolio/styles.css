@@ -31,17 +31,12 @@ li{
     display: inline
 }
 
-#main, #more, #final {
-    
-}
-
 #main {
     height: 90%;
     text-align: center;
     background-color: #22183B;
     padding-top: 5%;
 }
-
 
 #main_img {
     max-width: 25%;
@@ -58,7 +53,6 @@ li{
     padding: 15px 30px;
     text-align: center;
     font-size: 16px;
-
 }
 
 .botao:hover {
@@ -91,11 +85,8 @@ td, th, li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     background-color: #101010;
-
 }
-
 
 #farewell {
   font-size: smaller;  
