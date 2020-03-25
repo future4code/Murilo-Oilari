@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: white;
+    font-family: sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#header {
+    height: 7%;
+    background-color: #101010;
+}
+
+#title_header {
+    padding-top: 0.9%;
+    padding-left: 3%; 
+}
+
+ul {
+    display: inline;
+    text-align: right;
+}
+
+li{
+    text-align: right;
+    display: inline
+}
+
+#main, #more, #final {
+    
+}
+
+#main {
+    height: 90%;
+    text-align: center;
+    background-color: #22183B;
+    padding-top: 5%;
+}
+
+
+#main_img {
+    max-width: 25%;
+}
+
+#credits {
+    font-size: smaller;
+    padding-bottom: 2%;
+}
+ 
+.botao {
+    background-color: #101010;
+    border-radius: 10px;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 16px;
+
+}
+
+.botao:hover {
+    color: #101010;
+    background-color: white;
+}
+
+#more {
+    background-color: #22183B;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+td, th, li {
+    text-align: center;
+}
+
+#final {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+    background-color: #22183B;
+}
+
+#footer {
+    height: 17%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #101010;
+
+}
+
+
+#farewell {
+  font-size: smaller;  
+}
