@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: lightgray;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "inserir postagem lateral";
+    grid-template-columns: 2fr 4fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+div#inserir {
+    grid-column: inserir;
+    margin: 5%;
+}
+
+section#postagens {
+    grid-column: postagem;
+}
+
+div#lateral {
+    grid-column: lateral;
+}
+
+article {
+    max-width: 3fr;
+    background-color: #101010;
+    color: lightgray;
+    border: 2px white solid;
+    border-radius: 10px;
+    padding: 3%;
+    margin: 1%;
+}
+
+article > h3 {
+    text-align: center;
+}
+
+article > p {
+    text-align: justify;
+}
+
+article > h6 {
+    text-align: right;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" type="text/css" rel="stylesheet"/>
+        <script defer src="scripts.js"></script>
+        <title>semana4-aula15 blog</title>
+    </head>
+    <body>
+        <main>
+            <div id="inserir">
+                <input type="text" placeholder="autor" id="autor">
+                <input type="text" placeholder="título" id="titulo">
+                <textarea type="text" placeholder="conteúdo"id="conteudo"></textarea>
+                <button onclick="enviaPostagem(event)">enviar</button>
+            </div>
+            <section id="postagens"></section>
+            <div id="lateral"></div>
+        </main>
+    </body>
+</html>
