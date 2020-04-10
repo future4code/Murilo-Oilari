@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "a b c"
+                         "d e f"
+                         "g h i";
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+section {
+    border: 1px black solid;
+    border-radius: 15px;
+    padding: 10%;
+    margin: 2%;
+}
+
+section#cadastro {
+    grid-area: d;
+}
+
+section#detalhe {
+    grid-area: e;
+}
+
+section#extrato {
+    grid-area: f;
+}
+
+section#resultado {
+    grid-area: h;
+    border: none;
+    text-align: center;
+}
+
+article {
+    padding: 2%;
+    text-align: left;
+    border-bottom: 1px black solid;
+}
