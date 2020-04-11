@@ -1,5 +1,5 @@
 /** 
- * AULA 14 - DOM
+ * AULA 14
  * 
  *  Exercícios de leitura de código
  *
@@ -110,39 +110,155 @@ function tipoTriangulo(ladoA, ladoB, ladoC) {
  *  ii. determine se eles são divisíveis um pelo outro (use o operador `%`) e
  *  iii. determine a diferença entre eles (o resultado deve ser um número positivo sempre)
  */
-const primeiroNumero = Number(prompt("1º número:"));
-const segundoNumero = Number(prompt("2º número:"));
-let primeiroMaior = false;
-let segundoMaior = false;
+// const primeiroNumero = Number(prompt("1º número:"));
+// const segundoNumero = Number(prompt("2º número:"));
+// let primeiroMaior = false;
+// let segundoMaior = false;
 
-if(primeiroNumero > segundoNumero) {
-    console.log("O maior é: " + primeiroNumero);
-    primeiroMaior = true;
-} else if(primeiroNumero < segundoNumero) {
-    console.log("O maior é: " + segundoNumero);
-    segundoMaior = true;
-} else {
-    console.log("Ambos são iguais: " + primeiroNumero + " e " + segundoNumero)
+// if(primeiroNumero > segundoNumero) {
+//     console.log("O maior é: " + primeiroNumero);
+//     primeiroMaior = true;
+// } else if(primeiroNumero < segundoNumero) {
+//     console.log("O maior é: " + segundoNumero);
+//     segundoMaior = true;
+// } else {
+//     console.log("Ambos são iguais: " + primeiroNumero + " e " + segundoNumero)
+// }
+
+// if(primeiroNumero % segundoNumero === 0) {
+//     console.log(primeiroNumero + " é divisível por " + segundoNumero)
+// } else {
+//     console.log(primeiroNumero + " não é divisível por " + segundoNumero)
+// }
+
+// if(segundoNumero % primeiroNumero === 0) {
+//     console.log(segundoNumero + " é divisível por " + primeiroNumero)
+// } else {
+//     console.log(segundoNumero + " não é divisível por " + primeiroNumero)
+// }
+
+// if(primeiroMaior) {
+//     const diferenca = primeiroNumero - segundoNumero;
+//     console.log("A diferença entre eles é " + diferenca);
+// }
+
+// if(segundoMaior) {
+//    const diferenca = segundoNumero - primeiroNumero
+//     console.log("A diferença entre eles é " + diferenca);
+// }
+
+
+/**
+ *  AULA 15
+ * 
+ *  Exercícios de Funções
+ *
+ *  1. Escreva uma função que receba um `array` de números e imprima na tela o segundo maior e o segundo 
+ *  menor número. Em seguida, invoque essa função.
+ */
+function imprimeSegundoMaiorMenor(arrayRecebida) {
+    let menorNumero = Infinity;
+    let maiorNumero = 0;
+    var indexMaior = 0;
+    var indexMenor = 0;
+    let segundoMenorNumero = Infinity;
+    let segundoMaiorNumero = 0; 
+    
+    for(numero of arrayRecebida) {
+        if(numero < menorNumero) {
+            menorNumero = numero;
+        }
+        if(numero > maiorNumero) {
+            maiorNumero = numero;
+        }
+    }
+
+    let arrayTemporaria = arrayRecebida.map((elemento, index, array) => {
+        if(elemento === maiorNumero) {
+            indexMaior = index;
+        }
+        if(elemento === menorNumero) {
+            indexMenor  = index;
+        }
+    })
+    
+    arrayTemporaria = arrayRecebida
+    if(indexMaior > indexMenor) {
+        arrayTemporaria.splice(indexMaior, 1)
+        arrayTemporaria.splice(indexMenor, 1)
+    } else if(indexMaior < indexMenor){
+        arrayTemporaria.splice(indexMenor, 1)
+        arrayTemporaria.splice(indexMaior, 1)
+    }
+    
+    for(numero of arrayTemporaria) {
+        if(numero < segundoMenorNumero) {
+            segundoMenorNumero = numero;
+        }
+        if(numero > segundoMaiorNumero) {
+            segundoMaiorNumero = numero;
+        }
+    }
 }
 
-if(primeiroNumero % segundoNumero === 0) {
-    console.log(primeiroNumero + " é divisível por " + segundoNumero)
-} else {
-    console.log(primeiroNumero + " não é divisível por " + segundoNumero)
+ /**
+ *  2. Escreva uma **função não nomeada** que faça um `alert("Hello Future4");`. Em seguida, invoque 
+ *  essa função.
+ */
+labenu = () => {
+    return alert("Hello Future4");
+}
+labenu();
+
+ /** 
+ *  Exercícios de Objetos
+ *  
+ *  1. Explique com as suas palavras o que são e quando podemos/devemos utilizar arrays e objetos.
+ *  RESPOSTA: Arrays para a organizção de itens e objetos para que não fiquem avulsos no código facilitando 
+ *  assim a organização, e objetos para guardar diversos parametros de uma determinada coisa ou item, ficando
+ *  desta forma tudo agrupado.
+ * 
+ *  2. Crie uma função chamada `criaRetangulo` que recebe como parâmetros dois lados (`lado1` e `lado2`) e 
+ *  retorna um objeto com 4 informações: largura (`lado1`), altura (`lado2`), perímetro (`2 * (lado1 + lado2)`) 
+ *  e área (`lado1 * lado2`).
+ */
+ function criaRetangulo(lado1, lado2) {
+    console.log("largura: " + lado1);
+    console.log("altura: " + lado2);
+    console.log("perimetro: " + 2*(lado1 + lado2));
+    console.log("area: " + (lado1 * lado2));
+ }
+ /** 
+ *  3. Crie um objeto para representar seu filme favorito. Ele deve ter as seguintes propriedades: título, 
+ *  ano, diretor e atores/atrizes (lista com pelo menos 2 atores/atrizes). Imprima na tela a seguinte string, 
+ *  baseada nos valores do objeto:
+ *  `Venha assistir ao filme NOME DO FILME, de ANO, dirigido por DIRETOR e estrelado por ATOR 1, ATRIZ 2, 
+ *  ATOR n`. A lista de atores/atrizes deve ser impressa inteira, independente do tamanho da lista.
+ */
+const melhorFilme = {
+    titulo: "O labirinto do Fauno",
+    ano: 2006,
+    diretor: "Guillermo del Toro",
+    atores: nomes = ["Ivana Baquero", "Sergi López", "Maribel Verdú", "Doug Jones"],
 }
 
-if(segundoNumero % primeiroNumero === 0) {
-    console.log(segundoNumero + " é divisível por " + primeiroNumero)
-} else {
-    console.log(segundoNumero + " não é divisível por " + primeiroNumero)
-}
+console.log("Venha assistir ao filme " + melhorFilme.titulo + " de " + melhorFilme.ano + ", dirigido por " + melhorFilme.diretor + " e estrelado por " + melhorFilme.atores + ".");
 
-if(primeiroMaior) {
-    const diferenca = primeiroNumero - segundoNumero;
-    console.log("A diferença entre eles é " + diferenca);
-}
-
-if(segundoMaior) {
-   const diferenca = segundoNumero - primeiroNumero
-    console.log("A diferença entre eles é " + diferenca);
+/**  
+ *  4. Crie um objeto que represente uma pessoa qualquer, com as propriedades de `nome`, `idade`, `email` e `endereco`. 
+ *  Crie uma função chamada `anonimizarPessoa`, que deverá retornar um **novo** objeto com as mesmas propriedades, mas com a string 
+ *  `ANÔNIMO` no lugar do nome. O objeto original deve ser mantido com o nome da pessoa.
+ */
+const pessoa = {
+    nome: "Clóvis",
+    idade: 19,
+    email: "clo@bol.com.br",
+    endereco: "rua logo ali, tv 1, casa 2",
+    anonimizarPessoa: function() {
+        const pessoaAnonimizada = {
+            ...pessoa,
+            nome: "ANÔNIMO"
+        }
+        return pessoaAnonimizada;
+    }
 }
