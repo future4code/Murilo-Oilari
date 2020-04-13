@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" type="text/css" rel="stylesheet"/>
+        <script defer src="scripts.js"></script>
+        <title>Semana4-Aula16</title>
+    </head>
+    <body>
+        <section id="cadastro">
+            <h1>Controlador de despesas</h1>
+            <h3>Cadastrar despesa:</h3>
+            <input placeholder="VALOR" id="valor-despesa">
+            <select id="tipo-gasto">
+                <option value="padrao" selected>tipo do gasto</option>
+                <option value="casa">Despesa de casa</option>
+                <option value="festa">Despesa em festa</option>
+                <option value="viagem">Despesa em viagem</option>
+                <option value="transporte">Despesa com transporte</option>
+                <option value="diversas">Despesas diversas</option>
+            </select>
+            <input placeholder="DESCRIÇÂO" id="descricao-despesa">
+            <button onclick="casdastraDespesa(event)">Cadastrar Despesa</button>
+        </section>
+        <section id="detalhe">
+            <h1>Despesas detalhadas</h1>
+            <select id="tipo-gasto-detlhe">
+                <option value="padrao" selected>tipo do gasto</option>
+                <option value="casa">Despesa de casa</option>
+                <option value="festa">Despesa em festa</option>
+                <option value="viagem">Despesa em viagem</option>
+                <option value="transporte">Despesa com transporte</option>
+                <option value="diversas">Despesas diversas</option>
+            </select>
+            <input placeholder="VALOR MÍNIMO" id="valor-minimo">
+            <input placeholder="VALOR MÁXIMO" id="valor-maximo">
+            <button onclick="pesquisaDespesa(event)">Filtrar</button>
+            <button onclick="limpaPesquisa()">Limpar Filtros</button>
+        </section>
+        <section id="extrato">
+            <h1>Extrato</h1>
+            <h1>Valor Total:</h1>
+            <h2 id="valor-total"></h2>
+        </section>
+        <section id="resultado"></section>
+    </body>
+</html>
