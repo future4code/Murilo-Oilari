@@ -10,7 +10,8 @@ import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import iconeFavoritoEscuro from '../../img/bookmark.svg'
 import iconeFavoritoClaro from '../../img/bookmark-white.svg'
-import iconeCompartilhar from '../../img/share.svg'
+import iconeCompartilharInativo from '../../img/share.svg'
+import iconeCompartilharAtivo from '../../img/share-active.svg'
 
 class Post extends React.Component {
   state = {
@@ -41,6 +42,30 @@ class Post extends React.Component {
     })
   }
 
+  aoCompartilharFacebook = () => {
+    this.setState({
+      compartilhando: false
+    })
+
+    console.log("Compartilhou no facebook")
+  }
+
+  aoCompartilharInstagram = () => {
+    this.setState({
+      compartilhando: false
+    })
+
+    console.log("Compartilhou no instagram")
+  }
+
+  aoCompartilharTwitter = () => {
+    this.setState({
+      compartilhando: false
+    })
+
+    console.log("Compartilhou no twitter")
+  }
+
   onClickComentario = () => {
     this.setState({
       comentando: !this.state.comentando
@@ -64,6 +89,14 @@ class Post extends React.Component {
       iconeCurtida = iconeCoracaoBranco
     }
 
+    let iconeCompartilhar
+
+    if(this.state.compartilhando) {
+      iconeCompartilhar = iconeCompartilharAtivo
+    } else {
+      iconeCompartilhar = iconeCompartilharInativo
+    }
+
     let iconeFavorito
 
     if(this.state.favorito) {
@@ -75,7 +108,7 @@ class Post extends React.Component {
     let componenteCompartilhar
 
     if(this.state.compartilhando) {
-      componenteCompartilhar = <SecaoCompartilhar />
+      componenteCompartilhar = <SecaoCompartilhar aoCompartilharFacebook={this.aoCompartilharFacebook} aoCompartilharInstagram={this.aoCompartilharInstagram} aoCompartilharTwitter={this.aoCompartilharTwitter}/>
     }
 
     let componenteComentario
@@ -101,7 +134,7 @@ class Post extends React.Component {
 
         <IconeSemContador
           icone={iconeCompartilhar}
-          onClick={this.onClickCompartilhar}
+          onClickIcone={this.onClickCompartilhar}
         />
 
         <IconeSemContador
