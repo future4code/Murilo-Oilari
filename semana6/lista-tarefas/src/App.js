@@ -19,27 +19,27 @@ const InputsContainer = styled.div`
 `
 
 class App extends React.Component {
-    state = {
-      tarefas: [{
-        id: Date.now(),
-        texto: "Texto da tarefa",
-        completa: false}],
+  state = {
+    tarefas: [{
+      id: Date.now(),
+      texto: "Texto da tarefa",
+      completa: false}],
       inputValue: '',
       filter: ''
     }
 
   componentDidUpdate() {
-    
+    localStorage.setItem("tarefa", JSON.stringify(this.state.tarefas))
   };
-
+  
   componentDidMount() {
-
+    this.setState({tarefas: JSON.parse(localStorage.getItem("tarefa"))})
   };
 
   onChangeInput = (event) => {
     this.setState({inputValue: event.target.value})
   }
-
+  
   criaTarefa = () => {
     const adicionandoTarefa = this.state.tarefas
     const novaTarefa = {
@@ -50,7 +50,7 @@ class App extends React.Component {
     adicionandoTarefa.push(novaTarefa)
     this.setState({tarefas: adicionandoTarefa}) 
   }
-
+  
   selectTarefa = (id) => {
     const selecionaTarefa = this.state.tarefas.filter((tarefa) => {
       if(id === tarefa.id) {
@@ -61,25 +61,25 @@ class App extends React.Component {
     })
     this.setState({tarefas: selecionaTarefa})
   }
-
+  
   onChangeFilter = (event) => {
-      this.setState({filter: event.target.value})
+    this.setState({filter: event.target.value})
   }
   
   render() {
     const listaFiltrada = this.state.tarefas
-      .filter(tarefa => {
-        switch (this.state.filter) {
-          case 'pendentes':
-            return !tarefa.completa
+    .filter(tarefa => {
+      switch (this.state.filter) {
+        case 'pendentes':
+          return !tarefa.completa
           case 'completas':
             return tarefa.completa
-          default:
-            return true
-        }
-      })
+            default:
+              return true
+      }
+    })
   
-    return (
+    return (  
       <div className="App">
         <h1>Lista de tarefas</h1>
         <InputsContainer>
