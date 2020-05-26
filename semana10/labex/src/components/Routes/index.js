@@ -31,7 +31,7 @@ const Routes = () => {
                 <Route exact path='/adm/criar-viagem'>
                     <CreateTripPage />
                 </Route>
-                <Route exact path='/adm/inscricoes'>
+                <Route exact path='/adm/inscricoes/:id'>
                     <ApprovePage />
                 </Route>
                 <Route path='/'>
