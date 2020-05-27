@@ -9,6 +9,17 @@ import AdmMenu from '../AdmMenu/AdmMenu';
 
 import useProtectedPage from '../Hooks/useProtectedPage';
 
+import useForm from '../Hooks/useForm'
+
+import DatePickers from './Date'
+
+
+
+
+import DateFnsUtils from "@date-io/date-fns";
+
+
+
 
 const FormDeCriacaoDeViagem = styled.form`
     width: 80%;
@@ -18,13 +29,37 @@ const FormDeCriacaoDeViagem = styled.form`
 
 const CreateTripPage = () => {
     useProtectedPage();
+
+
+    const hoje = new Date().toISOString().split("T")[0];
+
+    
+  
+
+    const { form, onChange } = useForm({name: '', planet: '', date: '', description: '', durationInDays: ''})
     
     const [body, setBody] = useState({});
+
+    const handleInputChange = event => {
+        const { name, value } = event.target;
+
+        onChange(name, value);
+    };
+
+    const aoEnviar = () => {
+        setBody(form);
+        console.log(body)
+    };
     
+
+
     useEffect(() => {
+        const token = window.localStorage.getItem('token');
         axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/murilo-oliari-julian/trips', body, {
             headers: {
-                Authorization: ''
+                auth: token,
+                aluno: 'murilo-oliari-julian'
+
             }
         }).then((response) => {
             console.log(response);
@@ -44,9 +79,23 @@ const CreateTripPage = () => {
         <MainContentContainer>
             <FormDeCriacaoDeViagem>
                 Inserir nova viagem:
-                <input placeholder='Nome da viagem' />
-                <select>
-                    <option value=''>Escolha o planeta de destino</option>
+                <input
+                    value={form.name}
+                    type='text'
+                    name='name'
+                    placeholder='Nome da viagem'
+                    onChange={handleInputChange}
+                    minLength='5'
+                    required
+                />
+                <select
+                    value={form.planet}
+                    type='text'
+                    name='planet'
+                    onChange={handleInputChange}
+                    required
+                >
+                    <option value='0'>Escolha o planeta de destino</option>
                     <option value='mercurio'>Mercúrio</option>
                     <option value='venus'>Vênus</option>
                     <option value='marte'>Marte</option>
@@ -56,10 +105,39 @@ const CreateTripPage = () => {
                     <option value='netuno'>Netuno</option>
                     <option value='plutao'>Plutão</option>
                 </select>
-                <input type='date' placeholder='Data do embarque'/>
-                <textarea placeholder='Descrição da viagem'></textarea>
-                <input type='number' min='1' placeholder='Tempo de duração em dias' />
-                <button>Criar</button>
+                 {/**<DatePickers
+                    dateValue={form.data}
+                    dateName={'date'}
+                    dateOnChange={handleInputChange}
+                />*/}
+               <input
+                    value={form.date}
+                    type='date'
+                    name='date'
+                    min={hoje}
+                    placeholder='Data do embarque'
+                    required
+                />
+                <textarea
+                    value={form.description}
+                    type='text'
+                    name='description'
+                    placeholder='Descrição da viagem'
+                    minLength='30'
+                    onChange={handleInputChange}
+                    required
+                >
+                </textarea>
+                <input
+                    value={form.durationInDays}
+                    type='number'
+                    name='durationInDays'
+                    placeholder='Tempo de duração em dias'
+                    min='50'
+                    onChange={handleInputChange}
+                    required
+                />
+                <button onClick={aoEnviar}>Criar</button>
             </FormDeCriacaoDeViagem>
         </MainContentContainer>
     </MainPageContainer>
@@ -67,3 +145,13 @@ const CreateTripPage = () => {
 };
 
 export default CreateTripPage;
+
+
+
+
+
+
+
+
+
+

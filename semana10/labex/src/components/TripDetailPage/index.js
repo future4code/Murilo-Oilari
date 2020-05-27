@@ -4,32 +4,46 @@ import { CountryDropdown } from 'react-country-region-selector';
 import axios from 'axios';
 import styled from 'styled-components';
 
+import useForm from '../Hooks/useForm'
+import CountriesSelect from './CountriesSelect'
+
 import UserFooter from '../UserFooter/UserFooter';
 import UserBar from '../UserBar/UserBar';
 
 import { MainPageContainer, MainBarContainer, MainContainer, MainFooterContainer } from '../Style/UserStyle'
 
-const FormAplicacao = styled.div`
+const FormAplicacao = styled.form`
+    width: 50%;
     display: flex;
     flex-direction: column;
-
 `
 
 
 const TripDetailPage = () => {
+    const pathParams = useParams();
+    
+    const { form, onChange } = useForm({name: '', age: '', applicationText: '', profession: '', country: ''});
+
     const [listaDeViagens, setListaDeViagens] = useState([]);
     const [body, setBody] = useState({});
-    const [nome, setNome] = useState('');
-    const [idade, setIdade] = useState('');
-    const [texto, setTexto] = useState('');
-    const [profissao, setProfissao] = useState('');
-    const [pais, setPais] = useState('');
+    //const [nome, setNome] = useState('');
+    //const [idade, setIdade] = useState('');
+    //const [texto, setTexto] = useState('');
+    //const [profissao, setProfissao] = useState('');
+    //const [pais, setPais] = useState('');
 
-    const pathParams = useParams();
+    const handleInputChange = event => {
+        const { name, value } = event.target;
 
-    const selecionaPais = (value) => {
-        setPais(value);
+        onChange(name, value);
     };
+
+    
+    
+    
+    // const selecionaPais = (value) => {
+    //     setPais(value);
+    // };
 
     useEffect(() => {
         axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/murilo-oliari-julian/trips', {
@@ -68,21 +82,21 @@ const TripDetailPage = () => {
         });
     };
 
-    const onChangeNome = (event) => {
-        setNome(event.target.value);
-    };
+    // const onChangeNome = (event) => {
+    //     setNome(event.target.value);
+    // };
 
-    const onChangeIdade = (event) => {
-        setIdade(event.target.value);
-    };
+    // const onChangeIdade = (event) => {
+    //     setIdade(event.target.value);
+    // };
 
-    const onChangeTexto = (event) => {
-        setTexto(event.target.value);
-    };
+    // const onChangeTexto = (event) => {
+    //     setTexto(event.target.value);
+    // };
 
-    const onChangeProfissao = (event) => {
-        setProfissao(event.target.value);
-    };
+    // const onChangeProfissao = (event) => {
+    //     setProfissao(event.target.value);
+    // };
     
     const viagemDetalhada = listaDeViagens.filter(viagem => {
         if(viagem.id === pathParams.id) {
@@ -107,16 +121,55 @@ const TripDetailPage = () => {
                     );
                 })}
                 <FormAplicacao>
-                    <input onChange={onChangeNome} placeholder='Nome' />
-                    <input onChange={onChangeIdade} type='number' placeholder='Idade' />
-                    <textarea onChange={onChangeTexto} placeholder='Por qual motivo devo ser escolhido' rows='10' cols='40' ></textarea>
-                    <input onChange={onChangeProfissao} placeholder='Profissão' />
-                    <CountryDropdown
-                        defaultOptionLabel='Nacionalidade' 
-                        value={pais} 
-                        onChange={(value) => selecionaPais(value)} 
+                    <input
+                        value={form.name}
+                        type='text'
+                        name='name'
+                        placeholder='Nome'
+                        onChange={handleInputChange}
+                        required
                     />
-                    <button onClick={() => aoSeCandidatar(nome, idade, texto, profissao, pais)}>Candidatar-se</button>
+                    <input
+                        value={form.age}
+                        type='number' 
+                        name='age'
+                        placeholder='Idade'
+                        min='18'
+                        onChange={handleInputChange}
+                        required
+                    />
+                    <textarea
+                        value={form.applicationText}
+                        type='text'
+                        name='applicationText'
+                        placeholder='Por qual motivo devo ser escolhido' 
+                        rows='10'
+                        cols='40' 
+                        onChange={handleInputChange}
+                        required
+                    >
+                    </textarea>
+                    <input
+                        value={form.profession}
+                        type='text'
+                        name='profession'
+                        placeholder='Profissão'
+                        onChange={handleInputChange} 
+                        required
+                    />
+                    <CountriesSelect
+                        countryValue={form.country}
+                        onChange={handleInputChange}
+                    />
+                    {/**<CountryDropdown
+                        value={form.country}
+                        name='country'
+                        defaultOptionLabel='Nacionalidade'
+                        onChange={handleInputChange}
+                        required
+                        /**onChange={(value) => selecionaPais(value)}
+                    /> */}
+                    <button>Candidatar-se</button>
                 </FormAplicacao>
 
             </MainContainer>
