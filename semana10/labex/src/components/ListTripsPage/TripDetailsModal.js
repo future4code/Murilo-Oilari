@@ -36,7 +36,7 @@ const TripDetailsModal = (props) => {
   return (
     <div>
       <button type="button" onClick={handleOpen}>
-        react-transition-group
+        [+] Detalhes
       </button>
       <Modal
         aria-labelledby="transition-modal-title"

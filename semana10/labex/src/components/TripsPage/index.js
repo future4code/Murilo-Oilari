@@ -15,9 +15,18 @@ const CardsContainer = styled.section`
     display: flex;
     /*flex-direction: column;*/
     align-items:center;
-    background-color: gray;
     flex-wrap: wrap;
+    justify-content: space-between;
+    
 `
+
+const Cards = styled.div`
+    margin-top: 5%;
+    display: flex;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+` 
 
 const CardViagem = styled.div`
     border: 1px solid black;
@@ -48,28 +57,29 @@ const TripsPage = () => {
         }).catch((error) => {
             console.log(error);
         })
-
+        
     }, []);
-
+    
     return (
         <MainPageContainer>
             <MainBarContainer>
                 <UserBar />
             </MainBarContainer>
             <MainContainer>
-                Próximas viagens:
-                <CardsContainer>
-                    {listaDeViagens && listaDeViagens.map((viagem, index) => {
-                        return (
-                            <TripCard
-                                aoClicarViagem={() => goToTripDetail(viagem.id)}
-                                imagem={`https://picsum.photos/200?random=${index}&blur=2`}
-                                titulo={viagem.name}
-                                descricao={viagem.description}
-                            />
-                        )
-                    })}
-                </CardsContainer>
+                    <CardsContainer>
+                        {listaDeViagens && listaDeViagens.map((viagem, index) => {
+                            return (
+                                <Cards>
+                                    <TripCard
+                                        aoClicarViagem={() => goToTripDetail(viagem.id)}
+                                        imagem={`https://picsum.photos/200?random=${index}&blur=4`}
+                                        titulo={viagem.name}
+                                        descricao={viagem.description}
+                                    />
+                                </Cards>
+                            )
+                        })}
+                    </CardsContainer>
             </MainContainer>
             <MainFooterContainer>
                 <UserFooter />

@@ -20,6 +20,10 @@ const TypoDescripcion = styled(Typography)`
 const useStyles = makeStyles({
   root: {
     maxWidth: 350,
+    background: 'linear-gradient(45deg, #dbdbdb 30%, #f7f7f7 90%)',
+    border: 10,
+    borderRadius: 3,
+    boxShadow: '5px 5px 5px 5px rgba(0, 0, 0, .5)',
   },
   media: {
     height: 125,
@@ -47,7 +51,7 @@ const TripCard = (props) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="textSecondary">
           Saiba mais
         </Button>
       </CardActions>

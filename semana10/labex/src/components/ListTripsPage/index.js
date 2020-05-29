@@ -10,6 +10,19 @@ import AdmMenu from '../AdmMenu/AdmMenu';
 
 import useProtectedPage from '../Hooks/useProtectedPage';
 
+const TripsList = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+`
+
+const TripItem = styled.div`
+    min-width: 300px; 
+    background-color: white;
+    margin: 5%;
+    padding: 2%;
+`
 
 const ListTripsPage = (props) => {
     useProtectedPage();
@@ -44,23 +57,25 @@ const ListTripsPage = (props) => {
                 <AdmMenu />
             </MainMenuContainer>
             <MainContentContainer>
-                {listaDeViagens && listaDeViagens.map(viagem => {
-                    return (
-                        <div>
-                            <h3>{viagem.name}</h3>
-                            <p>{viagem.planet}</p>
-                            <TripDetailsModal 
-                                titulo={viagem.name}
-                                planeta={viagem.planet}
-                                dias={viagem.durationInDays}
-                                data={viagem.date}
-                                descricao={viagem.description}
-                                id={viagem.id}
-                                aoClicar={() => goToApprovePage(viagem.id)}
-                            />            
-                        </div>
-                    )
-                })}
+                <TripsList>
+                    {listaDeViagens && listaDeViagens.map(viagem => {
+                        return (
+                            <TripItem>
+                                <h3>{viagem.name}</h3>
+                                <p>{viagem.planet}</p>
+                                <TripDetailsModal 
+                                    titulo={viagem.name}
+                                    planeta={viagem.planet}
+                                    dias={viagem.durationInDays}
+                                    data={viagem.date}
+                                    descricao={viagem.description}
+                                    id={viagem.id}
+                                    aoClicar={() => goToApprovePage(viagem.id)}
+                                />            
+                            </TripItem>
+                        )
+                    })}
+                </TripsList>
             </MainContentContainer>
         </MainPageContainer>
     );

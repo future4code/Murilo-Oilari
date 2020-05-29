@@ -42,7 +42,7 @@ const UpperPage = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
+    background-color: #202020;
     opacity: 85%;
 `
 
@@ -70,8 +70,8 @@ const Footer = styled.footer`
     grid-area: footer;
     color: white;
     display: flex;
-    background-color: black;
-    opacity: 909%;
+    background-color: #202020;
+    opacity: 85%;
     align-items: center;
     text-align: center;
     justify-content:center;
@@ -139,11 +139,6 @@ const HomePage = () => {
     const goToTripsPage = () => {
         history.push('/viagens');
     };
-
-    const goToAdminPage = () => {
-        history.push('/adm');
-    };
-
 
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);

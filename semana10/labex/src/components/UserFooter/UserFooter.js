@@ -2,16 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContent = styled.footer`
-    min-height: 70px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    min-height: 80px;
     width: 100%;
     color: white;
     background-color: #202020;
+    align-items: center;
+    justify-content: center;
 `
 
 const UserFooter = () => {
     return (
         <FooterContent>
-            footer
+            <p>LaBuNu_ Projeto - Labe-X</p>
         </FooterContent>
     );
 };
