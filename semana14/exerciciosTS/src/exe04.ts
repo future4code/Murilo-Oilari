@@ -1,0 +1,2 @@
+//a.
+const lista: any = []
