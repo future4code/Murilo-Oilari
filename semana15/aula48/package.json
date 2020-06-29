@@ -1,0 +1,17 @@
+{
+  "name": "aula48",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "start": "ts-node ./src/index.ts",
+  "build": "tsc && node ./build/index.js"
+  },
+  "author": "Murilo_Oliari",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.0.14",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  }
+}
