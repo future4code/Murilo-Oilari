@@ -1,0 +1,120 @@
+[
+    {
+        "startDate": "01/01/2001",
+        "endDate": "02/02/2020",
+        "teachers": [
+            {
+                "id": 754631784,
+                "name": "Alice Wonders",
+                "email": "alice@bananinha.com",
+                "birthday": "15/05/1975",
+                "specialty": "poo"
+            },
+            {
+                "id": 333221963,
+                "name": "Bob Boo",
+                "email": "bob@bananinha.com",
+                "birthday": "15/05/1975",
+                "specialty": "react"
+            },
+            {
+                "id": 288537630,
+                "name": "Luigi Green-Mario",
+                "email": "luigi@bananinha.com",
+                "birthday": "15/05/1975",
+                "specialty": "typescript"
+            },
+            {
+                "id": 352164722,
+                "name": "Bar Ney",
+                "email": "bar@bananinha.com",
+                "birthday": "15/05/1975",
+                "specialty": "backend"
+            }
+        ],
+        "students": [
+            {
+                "id": 779871505,
+                "name": "Sven Von Bleus",
+                "email": "bleus@bananinha.com",
+                "birthday": "15/12/1995",
+                "hobby": [
+                    "preto",
+                    "azul"
+                ]
+            },
+            {
+                "id": 540860918,
+                "name": "Jhon Foo",
+                "email": "foo@bananinha.com",
+                "birthday": "15/05/1975",
+                "hobby": [
+                    "bege",
+                    "furta-cor"
+                ]
+            }
+        ],
+        "currentModule": 5,
+        "id": 873775341,
+        "name": ""
+    },
+    {
+        "startDate": "01/01/2009",
+        "endDate": "02/02/2015",
+        "teachers": [
+            {
+                "id": 754631784,
+                "name": "Alice Wonders",
+                "email": "alice@bananinha.com",
+                "birthday": "15/05/1975",
+                "specialty": "poo"
+            },
+            {
+                "id": 333221963,
+                "name": "Bob Boo",
+                "email": "bob@bananinha.com",
+                "birthday": "15/05/1975",
+                "specialty": "react"
+            },
+            {
+                "id": 288537630,
+                "name": "Luigi Green-Mario",
+                "email": "luigi@bananinha.com",
+                "birthday": "15/05/1975",
+                "specialty": "typescript"
+            },
+            {
+                "id": 352164722,
+                "name": "Bar Ney",
+                "email": "bar@bananinha.com",
+                "birthday": "15/05/1975",
+                "specialty": "backend"
+            }
+        ],
+        "students": [
+            {
+                "id": 779871505,
+                "name": "Sven Von Bleus",
+                "email": "bleus@bananinha.com",
+                "birthday": "15/12/1995",
+                "hobby": [
+                    "preto",
+                    "azul"
+                ]
+            },
+            {
+                "id": 540860918,
+                "name": "Jhon Foo",
+                "email": "foo@bananinha.com",
+                "birthday": "15/05/1975",
+                "hobby": [
+                    "bege",
+                    "furta-cor"
+                ]
+            }
+        ],
+        "currentModule": 7,
+        "id": 273801028,
+        "name": ""
+    }
+]
