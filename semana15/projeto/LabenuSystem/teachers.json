@@ -1,0 +1,58 @@
+[
+    {
+        "id": 323870401,
+        "name": "Alice Wonders",
+        "email": "alice@bananinha.com",
+        "birthday": "15/05/1975",
+        "specialty": "poo"
+    },
+    {
+        "id": 198381484,
+        "name": "Bob Boo",
+        "email": "bob@bananinha.com",
+        "birthday": "15/05/1975",
+        "specialty": "react"
+    },
+    {
+        "id": 495407134,
+        "name": "Luigi Green-Mario",
+        "email": "luigi@bananinha.com",
+        "birthday": "15/05/1975",
+        "specialty": "typescript"
+    },
+    {
+        "id": 982822157,
+        "name": "Bar Ney",
+        "email": "bar@bananinha.com",
+        "birthday": "15/05/1975",
+        "specialty": "backend"
+    },
+    {
+        "id": 754631784,
+        "name": "Alice Wonders",
+        "email": "alice@bananinha.com",
+        "birthday": "15/05/1975",
+        "specialty": "poo"
+    },
+    {
+        "id": 333221963,
+        "name": "Bob Boo",
+        "email": "bob@bananinha.com",
+        "birthday": "15/05/1975",
+        "specialty": "react"
+    },
+    {
+        "id": 288537630,
+        "name": "Luigi Green-Mario",
+        "email": "luigi@bananinha.com",
+        "birthday": "15/05/1975",
+        "specialty": "typescript"
+    },
+    {
+        "id": 352164722,
+        "name": "Bar Ney",
+        "email": "bar@bananinha.com",
+        "birthday": "15/05/1975",
+        "specialty": "backend"
+    }
+]

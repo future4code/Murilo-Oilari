@@ -1,0 +1,42 @@
+[
+    {
+        "id": 200791471,
+        "name": "Sven Von Bleus",
+        "email": "bleus@bananinha.com",
+        "birthday": "15/12/1995",
+        "hobby": [
+            "preto",
+            "azul"
+        ]
+    },
+    {
+        "id": 747383817,
+        "name": "Jhon Foo",
+        "email": "foo@bananinha.com",
+        "birthday": "15/05/1975",
+        "hobby": [
+            "bege",
+            "furta-cor"
+        ]
+    },
+    {
+        "id": 779871505,
+        "name": "Sven Von Bleus",
+        "email": "bleus@bananinha.com",
+        "birthday": "15/12/1995",
+        "hobby": [
+            "preto",
+            "azul"
+        ]
+    },
+    {
+        "id": 540860918,
+        "name": "Jhon Foo",
+        "email": "foo@bananinha.com",
+        "birthday": "15/05/1975",
+        "hobby": [
+            "bege",
+            "furta-cor"
+        ]
+    }
+]
